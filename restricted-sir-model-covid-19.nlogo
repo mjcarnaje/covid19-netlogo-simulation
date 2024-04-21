@@ -98,10 +98,8 @@ to handle_death_rate
 end
 
 to spread
-  let chance random-float 100
-
   ask other turtles in-radius 1 with [status = "S"] [
-    if chance < infection_rate [
+    if random-float 100 < infection_rate [
       set status "I"
     ]
   ]
@@ -197,8 +195,8 @@ GRAPHICS-WINDOW
 16
 -16
 16
-1
-1
+0
+0
 1
 ticks
 30.0
@@ -261,7 +259,7 @@ infection_rate
 infection_rate
 0
 99.99
-46.87
+45.0
 .01
 1
 %
@@ -270,7 +268,7 @@ HORIZONTAL
 SLIDER
 55
 375
-407
+410
 408
 annual_birth_per_1000
 annual_birth_per_1000
@@ -291,7 +289,7 @@ recovery_rate
 recovery_rate
 0
 99.99
-29.37
+26.5
 .01
 1
 %
@@ -300,7 +298,7 @@ HORIZONTAL
 SLIDER
 55
 415
-417
+410
 448
 annual_death_per_1000
 annual_death_per_1000
@@ -401,7 +399,7 @@ days_to_be_recoverable
 days_to_be_recoverable
 0
 20
-5.0
+7.0
 1
 1
 days
@@ -416,7 +414,7 @@ days_until_death
 days_until_death
 0
 90
-28.0
+24.0
 1
 1
 days
@@ -453,7 +451,7 @@ days_to_be_susceptible
 days_to_be_susceptible
 0
 20
-2.0
+4.0
 1
 1
 days
@@ -468,7 +466,7 @@ start_of_vaccination
 start_of_vaccination
 0
 100
-4.0
+6.0
 1
 1
 weeks
